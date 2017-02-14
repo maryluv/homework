@@ -1,7 +1,6 @@
 def openFile(name):
-    file = open(name, 'r', encouding = 'utf-8')
-    text = file.read()
-    file.close()
+    with open(name, 'r', encouding = 'utf-8') as t:
+        text = t.read()
     return text
 
 def findSphere(language, text):
