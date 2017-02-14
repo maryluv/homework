@@ -1,9 +1,9 @@
-def openFile(name):
+def openfile(name):
     with open(name, 'r', encouding = 'utf-8') as t:
         text = t.read()
     return text
 
-def findSphere(language, text):
+def findsphere(language, text):
     if language == 'RU' or lang == 'ru':
         step1 = text.find('<span class="no-wikidata" data-wikidata-property-id="P101">')
         if step1 == -1: return -1
@@ -19,9 +19,9 @@ def findSphere(language, text):
 
   
 name = input('Введите название файла: ')
-text = openFile(name)
+text = openfile(name)
 language('Выберите язык: ')
-sphere = findSphere(language, text)
+sphere = findsphere(language, text)
 if sphere == -1:
     print('Ничего не найдено')
 elif sphere == -2:
