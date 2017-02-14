@@ -1,0 +1,12 @@
+##на 5 баллов
+import re
+def gettext(filename):
+    lines = []
+    with open(filename, 'r', encoding = 'utf-8') as f:
+        lines = f.readlines()
+    return lines
+def result1(fname, text):
+    with open('result.txt', 'w', encoding = 'utf-8') as res:
+        res.write(text)
+lines = gettext('F.xml')
+result1('result.txt', str(len(lines)))
