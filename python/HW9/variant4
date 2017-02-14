@@ -1,0 +1,15 @@
+import re
+file = open('text.txt', 'r', encoding = 'utf-8')
+text = file.read()
+file.close()
+search_results = f.finditer("вып(и(ть|л.?|в(ш..?)?|т..)|(ют?|е(шь|те?|м(те)?))|ей(те)?)(\.|,|!|\?|:|;|\"|\'|\(|\))*", text)
+words = []
+marks = ['.', ',', '!', '?', ':', ';', '"', '(', ')']
+print('Встретились следующие формы глагола "выпить":')
+for result in search_resilts:
+    result = result.group()
+    while(marks.count(result[-1])>0):
+        result = result[:-1]
+    if words.count(result) == 0:
+        words.append(result)
+        print(result)
