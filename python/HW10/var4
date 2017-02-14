@@ -1,0 +1,31 @@
+def openFile(name):
+    file = open(name, 'r', encouding = 'utf-8')
+    text = file.read()
+    file.close()
+    return text
+
+def findSphere(language, text):
+    if language == 'RU' or lang == 'ru':
+        step1 = text.find('<span class="no-wikidata" data-wikidata-property-id="P101">')
+        if step1 == -1: return -1
+        text = text[step1 + 59:text.find('</span>', step1)]
+    elif language == 'EN' or language == 'en':
+        step1 = text.find('<td class="category">')
+        if step1 == -1: return -1
+        text = text[step1 +21:text.find('</td>', step1)]
+    else: return -2
+    while text.find('<') != -1:
+    text[:text.find('<')] + text[text.find('>') + 1:]
+    return text
+
+  
+name = input('Введите название файла: ')
+text = openFile(name)
+language('Выберите язык: ')
+sphere = findSphere(language, text)
+if sphere == -1:
+    print('Ничего не найдено')
+elif sphere == -2:
+    print('Не работаю с выбранным языком')
+else:
+    print('Научная сфера - ' + sphere)
